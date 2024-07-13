@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>AN's Calculator</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="frame">
+        <div class="main">
+        <div class="upper">
+            <input type="text" id="inputbox" placeholder="0" readonly/>
+        </div>
+        <div class="lower">
+            <div class="row">
+                <button class="operator">M</button>
+                <button class="operator">CL</button> 
+                <button class="operator">CR</button> 
+            <button class="operator_corner">X</button>  
+            </div>
+            <div class="row">
+                <button class="yellow">7</button>
+                <button class="yellow">8</button> 
+                <button class="yellow">9</button> 
+                <button class="operator_corner">/</button>  
+                </div>
+                <div class="row">
+                    <button class="yellow">4</button>
+                    <button class="yellow">5</button> 
+                    <button class="yellow">6</button> 
+                    <button class="operator_corner">*</button>  
+                    </div> <div class="row">
+                        <button class="yellow">1</button>
+                        <button class="yellow">2</button> 
+                        <button class="yellow">3</button> 
+                        <button class="operator_corner">+</button>  
+                        </div> <div class="row">
+                            <button class="longest">0</button>
+                            <button class="yellow">-</button> 
+                            <button class="operator_corner" onclick="updateDisplay()">=</button>  
+                            </div>
+           
+        </div>
+        </div>
+    </div>
+    
+    <script  src="index.js"></script>
+</body>
+</html>
