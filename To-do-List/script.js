@@ -10,19 +10,19 @@ document.addEventListener('DOMContentLoaded' , function() {
     addButton.addEventListener('click' , addTask);
     completed.addEventListener('click' , () => {
         if(completed.innerText === 'Completed') {
-            completedTasks()
+            completedTasks();
             completed.innerText = 'Show All';
             if(incompleted.innerText === 'Show All') {
                 incompleted.innerText = 'Incompleted';
             }
         } else {
             showAllTasks();
-            completed.innerTaxt = 'Completed';
+            completed.innerText = 'Completed';
         }
     });
 
     incompleted.addEventListener('click' , () => {
-        if(incompleted.innerText === 'Incomplete') {
+        if(incompleted.innerText === 'Incompleted') {
             incompletedTasks();
             incompleted.innerText = 'Show All';
             if(completed.innerText === 'Show All') {
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded' , function() {
         }
         else {
             showAllTasks();
-            incompleted.innerText = 'Incomplete';
+            incompleted.innerText = 'Incompleted';
         }
     });
 
@@ -45,6 +45,42 @@ document.addEventListener('DOMContentLoaded' , function() {
                 <span>${task}</span>
                 <button id="delete-button">x</button>`;
             taskList.appendChild(li);//this will add the task in ul list
+            //clear the input box again
+            newTask.value= '';
+
+            const delete_button = li.querySelector('#delete-button');
+            delete_button.addEventListener('click', () => li.remove());
         }
+    }
+    function incompletedTasks() {
+        const task = taskList.querySelectorAll('li');
+        task.forEach(task => {
+            const checkbox = task.querySelector('.task-checkbox');
+            if(checkbox.checked) {
+                task.style.display = 'none';
+            }
+            else {
+                task.style.display = 'flex';
+            }
+        });
+    }
+    
+    function completedTasks() {
+        const task = taskList.querySelectorAll('li');
+        task.forEach(task => {
+            const checkbox = task.querySelector('.task-checkbox');
+            if(checkbox.checked) {
+                task.style.display = 'flex';
+            } else {
+                task.style.display = 'none';
+            }
+        });  
+    }
+
+    function showAllTasks() {
+        const task = taskList.querySelectorAll('li');
+        task.forEach(task => {
+            task.style.display = 'flex';
+        })
     }
 });
