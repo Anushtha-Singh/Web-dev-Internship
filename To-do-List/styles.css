@@ -27,6 +27,7 @@ body, html {
     max-height: 70vh;
     overflow-y:auto ;
     box-sizing: 0ps 4px 8px rgba(0, 0, 0, 0.1);
+    
 }
 
 .todo-box h1 {
@@ -131,4 +132,26 @@ body, html {
     position: absolute;
     top: 2px;
     left: 6px;
+}
+
+.ate {
+    position: relative;
+    width: 115px;
+    height: 110px;
+    left: 420px;
+    top: 240px;
+    transfrom: rotate(-24.33deg);
+}
+/* have eatten watermelon piece */
+
+.image {
+    position: absolute;
+    top: 0px;
+    left: -1px;
+}
+
+.todo_bax , .Mr_watery {
+    position : absolute;
+    right: -9px;
+    bottom: 10px;
 }
